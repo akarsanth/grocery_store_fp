@@ -1,0 +1,16 @@
+export { default as Home } from "./Home";
+export { default as About } from "./About";
+export { default as Events } from "./Events";
+export { default as Services } from "./Services";
+export { default as Products } from "./Products";
+export { default as ContactUs } from "./ContactUs";
+export { default as Login } from "./Login";
+export { default as FAQ } from "./FAQ";
+export { default as Privacy } from "./PrivacyPolicy";
+export { default as Register } from "./Register";
+export { default as Category } from "./Category";
+export { default as ProductDetail } from "./ProductDetail";
+export { default as ForgotPassword } from "./ForgotPassword";
+export { default as Profile } from "./Profile";
+export { default as Search } from "./Search";
+export { default as Cart } from "./Cart";
