@@ -4,7 +4,6 @@ import { Link as RouterLink } from "react-router-dom";
 import NumericUpDown from "../common/NumericUpDown.js";
 
 // MUI IMPORTS
-import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -16,8 +15,6 @@ import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 import Link from "@mui/material/Link";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
 
 const CartProducts = ({ cartData }) => {
   const removeFromCartHandler = () => {};

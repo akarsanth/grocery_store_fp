@@ -22,7 +22,7 @@ import TableCell from "@mui/material/TableCell";
 import TableRow from "@mui/material/TableRow";
 import Alert from "@mui/material/Alert";
 import LoadingButton from "@mui/lab/LoadingButton";
-import { REQUESTING, SUCCESS } from "../hooks/useHttp/actionTypes";
+import { ERROR, REQUESTING, SUCCESS } from "../hooks/useHttp/actionTypes";
 import { setChange } from "../app/features/cart/cart-slice";
 
 const { REACT_APP_API_KEY } = process.env;
@@ -141,6 +141,26 @@ const Checkout = () => {
                       <Alert severity="error">
                         Select Payment method and delivery address!
                       </Alert>
+                    )}
+
+                    {status === ERROR && (
+                      <>
+                        {typeof response === "string" ? (
+                          <Alert severity="error">
+                            Select Payment method and delivery address!
+                          </Alert>
+                        ) : (
+                          <>
+                            {response.map((res) => {
+                              return (
+                                <Alert key={res.title} severity="error">
+                                  {res.title}
+                                </Alert>
+                              );
+                            })}
+                          </>
+                        )}
+                      </>
                     )}
                   </TableRow>
                 }

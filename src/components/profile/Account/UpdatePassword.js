@@ -18,7 +18,6 @@ import { BASE_URL } from "../../../constants";
 import { REQUESTING, SUCCESS, ERROR } from "../../../hooks/useHttp/actionTypes";
 import FormMessageBox from "../../FormMessageBox";
 import { updateSuccessMessage } from "../../../app/features/message/message-slice";
-import { fetchUserInfo } from "../../../app/features/auth/auth-actions";
 
 const { REACT_APP_API_KEY } = process.env;
 
@@ -27,9 +26,7 @@ const UpdatePassword = () => {
   const dispatch = useDispatch();
 
   // token
-  const { accessToken, userInfo } = useSelector((state) => state.auth);
-
-  // userinfo
+  const { accessToken } = useSelector((state) => state.auth);
 
   // Formik
   const {

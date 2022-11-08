@@ -31,7 +31,6 @@ import Address from "./components/profile/Address";
 import Dashboard from "./components/profile/Dashboard";
 import Orders from "./components/profile/Orders";
 import AccountDetails from "./components/profile/Account";
-import ViewOrder from "./components/profile/ViewOrder";
 
 function App() {
   const dispatch = useDispatch();
@@ -77,7 +76,6 @@ function App() {
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="address" element={<Address />} />
             <Route path="orders" element={<Orders />} />
-            <Route path="vieworder/:id" element={<ViewOrder />} />
             <Route path="details" element={<AccountDetails />} />
           </Route>
 

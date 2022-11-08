@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useReducer } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import axios from "axios";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { Link as RouterLink } from "react-router-dom";
 
 import useHttp from "../../hooks/useHttp";
@@ -16,9 +15,6 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Link from "@mui/material/Link";
-import Button from "@mui/material/Button";
-import LoadingButton from "@mui/lab/LoadingButton";
-import CircularProgress from "@mui/material/CircularProgress";
 import Alert from "@mui/material/Alert";
 import Chip from "@mui/material/Chip";
 import { SUCCESS } from "../../hooks/useHttp/actionTypes";
@@ -27,8 +23,6 @@ const { REACT_APP_API_KEY } = process.env;
 
 // Main Component
 const Orders = () => {
-  const dispatch = useDispatch();
-
   // access token from redux state
   const { accessToken } = useSelector((state) => state.auth);
 
@@ -95,13 +89,7 @@ const Orders = () => {
                     {orders.map((order) => (
                       <TableRow key={order.id}>
                         <TableCell align="left" sx={{ pl: 0 }}>
-                          <Link
-                            to={`/profile/vieworder/${order.id}`}
-                            component={RouterLink}
-                            underline="none"
-                          >
-                            #{order.id}
-                          </Link>
+                          #{order.id}
                         </TableCell>
                         <TableCell>{order.orderNumber}</TableCell>
                         <TableCell>
