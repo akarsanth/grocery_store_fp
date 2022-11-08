@@ -37,9 +37,9 @@ const authSlice = createSlice({
       state.userInfo = action.payload;
     },
 
-    setAddress(state, action) {
-      state.userInfo.address = action.payload;
-    },
+    // setAddress(state, action) {
+    //   state.userInfo.address = action.payload;
+    // },
   },
 });
 
@@ -49,7 +49,7 @@ export const {
   authSuccess,
   reset,
   setUserInfo,
-  setAddress,
+  // setAddress,
 } = authSlice.actions;
 
 export default authSlice.reducer;

@@ -21,14 +21,12 @@ import Typography from "@mui/material/Typography";
 
 // Component Import
 import ModalWrapper from "../../AddEditModal";
-import { fetchUserInfo } from "../../../app/features/auth/auth-actions";
-import { setAddress } from "../../../app/features/auth/auth-slice";
 
 const { REACT_APP_API_KEY } = process.env;
 
 // Main Component
 const AddressAddEditModal = (props) => {
-  const { open, handleClose, address, actionType } = props;
+  const { open, handleClose, address, actionType, setAddressChange } = props;
 
   const dispatch = useDispatch();
 
@@ -44,11 +42,11 @@ const AddressAddEditModal = (props) => {
     initialValues:
       actionType === "Edit"
         ? {
-            title: address.title,
-            contactNumber: address.contactNo,
-            longitude: address.longitude,
-            latitude: address.latitude,
-            customer: address.customer,
+            title: address?.title,
+            contactNumber: address?.contactNo,
+            longitude: address?.longitude,
+            latitude: address?.latitude,
+            customer: address?.customer,
           }
         : initialState,
     validationSchema: validationSchema,
@@ -96,15 +94,17 @@ const AddressAddEditModal = (props) => {
 
   useEffect(() => {
     if (status === SUCCESS) {
-      dispatch(setAddress(response));
+      // dispatch(setAddress(response));
       dispatch(
         updateSuccessMessage(
           `Address ${actionType === "Edit" ? "edited" : "added"} successfully!`
         )
       );
+
+      setAddressChange(true);
       handleClose();
     }
-  }, [status, handleClose, dispatch, actionType, response]);
+  }, [status, handleClose, dispatch, actionType, response, setAddressChange]);
 
   return (
     <>

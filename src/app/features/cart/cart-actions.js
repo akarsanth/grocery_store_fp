@@ -87,7 +87,6 @@ export const updateCartProduct = ({ quantity, cartProductId }) => {
 
       dispatch(setChange(true));
     } catch (e) {
-      console.log(e);
       const errors =
         e.response && e.response.data.errors
           ? e.response.data.errors

@@ -14,3 +14,5 @@ export { default as ForgotPassword } from "./ForgotPassword";
 export { default as Profile } from "./Profile";
 export { default as Search } from "./Search";
 export { default as Cart } from "./Cart";
+export { default as Checkout } from "./Checkout";
+export { default as OrderComplete } from "./OrderComplete";

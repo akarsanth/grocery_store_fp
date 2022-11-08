@@ -50,7 +50,7 @@ const ForwardArrowIcon = styled(ArrowForwardIosIcon)(({ theme }) => ({
 
 /////////////////////////////////////////
 // MAIN Component
-const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
+const CheckoutSteps = ({ step1, step2, step3 }) => {
   return (
     <StepBox>
       <StepBoxItem>
@@ -79,16 +79,6 @@ const CheckoutSteps = ({ step1, step2, step3, step4 }) => {
 
       <StepBoxItem>
         {step3 ? (
-          <ActiveStepText variant="h6">Payment</ActiveStepText>
-        ) : (
-          <StepText variant="h6">Payment</StepText>
-        )}
-
-        <ForwardArrowIcon fontSize="small" />
-      </StepBoxItem>
-
-      <StepBoxItem>
-        {step4 ? (
           <ActiveStepText variant="h6">Order Complete</ActiveStepText>
         ) : (
           <StepText variant="h6">Order Complete</StepText>

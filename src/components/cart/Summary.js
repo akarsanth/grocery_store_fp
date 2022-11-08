@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 import { CustTableCell, TableCellBox } from "../checkout/table/index";
 
 // MUI IMPORTS
 import Grid from "@mui/material/Grid";
+import Alert from "@mui/material/Alert";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
@@ -12,11 +13,10 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Box from "@mui/material/Box";
-import Link from "@mui/material/Link";
-import Button from "@mui/material/Button";
+
 import Typography from "@mui/material/Typography";
 
-const Summary = ({ cartData }) => {
+const Summary = ({ cartData, children }) => {
   return (
     <Grid item xs={1} md={4.5}>
       <TableContainer component={Box}>
@@ -68,15 +68,8 @@ const Summary = ({ cartData }) => {
               </TableCell>
             </TableRow>
 
-            <TableRow>
-              <TableCell sx={{ px: 0 }}>
-                <Link to="/checkout" component={RouterLink} underline="none">
-                  <Button variant="contained" fullWidth color="secondary">
-                    Proceed To Checkout
-                  </Button>
-                </Link>
-              </TableCell>
-            </TableRow>
+            {/* button */}
+            {children}
           </TableBody>
         </Table>
       </TableContainer>

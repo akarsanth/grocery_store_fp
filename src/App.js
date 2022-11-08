@@ -24,11 +24,13 @@ import {
   Profile,
   Search,
   Cart,
+  Checkout,
+  OrderComplete,
 } from "./pages";
 import Address from "./components/profile/Address";
 import Dashboard from "./components/profile/Dashboard";
 import Orders from "./components/profile/Orders";
-import AccountDetails from "./components/profile/AccountDetails";
+import AccountDetails from "./components/profile/Account";
 import ViewOrder from "./components/profile/ViewOrder";
 
 function App() {
@@ -80,6 +82,8 @@ function App() {
           </Route>
 
           <Route path="cart" element={<Cart />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="orderComplete" element={<OrderComplete />} />
         </Route>
       </Routes>
     </Layout>

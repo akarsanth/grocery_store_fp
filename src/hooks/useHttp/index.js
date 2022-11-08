@@ -24,6 +24,7 @@ const useHttp = () => {
           ? e.response.data.errors
           : e.message;
 
+      console.log(errors);
       dispatch(error(errors));
     }
   }, []);

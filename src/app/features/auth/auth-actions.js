@@ -85,17 +85,17 @@ export const fetchUserInfo = () => {
       url: `${BASE_URL}/api/v4/profile/show`,
       ...config,
     });
-    let userInfo = data.data;
+    // let userInfo = data.data;
 
-    // address
-    const { data: address } = await axios({
-      url: `${BASE_URL}/api/v4/delivery-address`,
-      ...config,
-    });
+    // // address
+    // const { data: address } = await axios({
+    //   url: `${BASE_URL}/api/v4/delivery-address`,
+    //   ...config,
+    // });
 
-    userInfo = { ...userInfo, address: address.data[0] || null };
+    // userInfo = { ...userInfo, address: address.data || null };
 
-    dispatch(setUserInfo(userInfo));
+    dispatch(setUserInfo(data.data));
   };
 };
 
