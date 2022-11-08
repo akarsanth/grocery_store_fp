@@ -47,15 +47,11 @@ const UpdateDetails = () => {
     onSubmit: (values, actions) => {
       const { firstName, lastName, contactNumber } = values;
 
-      console.log(values);
-
       const bodyData = {
         "first-name": firstName,
         "last-name": lastName,
         "mobile-number": contactNumber,
       };
-
-      console.log(bodyData);
 
       const config = {
         url: `${BASE_URL}/api/v4/profile`,
